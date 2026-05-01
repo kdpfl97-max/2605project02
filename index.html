@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PracticeSpace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@4.0.29/dist/fullpage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@egjs/flicking@4.11.4/dist/flicking.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="tp-header">
+        <div class="tp-header__inner">
+            <a href="index.html" class="tp-logo" aria-label="PracticeSpace 홈">
+                <span class="tp-logo__text">PracticeSpace</span>
+            </a>
+            <button type="button" class="tp-nav-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="tp-nav"></button>
+            <nav id="tp-nav" class="tp-nav" aria-label="Main navigation">
+                <ul class="tp-nav__list">
+                    <li><a href="about-us.html">회사소개</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="company-news.html">회사뉴스</a></li>
+                    <li><a href="reviews-inquiries.html">문의사항</a></li>
+                    <li><a href="customer-support.html">커뮤니티</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="fullpage" class="tp-main" aria-label="PracticeSpace 메인">
+        <!-- fullPage: 첫 풀뷰 -->
+        <div class="section section-intro" data-anchor="intro">
+            <div id="intro-bg-flicking" class="intro-bg-flicking flicking-viewport" aria-hidden="true" tabindex="-1">
+                <div class="flicking-camera">
+                    <div class="flicking-panel">
+                        <img src="https://picsum.photos/id/180/1920/1080" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+                    </div>
+                    <div class="flicking-panel">
+                        <img src="https://picsum.photos/id/28/1920/1080" alt="" width="1920" height="1080" decoding="async">
+                    </div>
+                    <div class="flicking-panel">
+                        <img src="https://picsum.photos/id/48/1920/1080" alt="" width="1920" height="1080" decoding="async">
+                    </div>
+                    <div class="flicking-panel">
+                        <img src="https://picsum.photos/id/201/1920/1080" alt="" width="1920" height="1080" decoding="async">
+                    </div>
+                </div>
+            </div>
+            <div class="intro-bg-overlay" aria-hidden="true"></div>
+            <div class="section-intro__inner">
+                <p class="section-intro__badge">1</p>
+                <h1 class="section-intro__title">PracticeSpace</h1>
+                <p class="section-intro__sub">매장 결제·POS·정산 흐름을 한 화면에서 연습해 보세요.</p>
+                <ul class="tp-chips" aria-label="업종 선택">
+                    <li><button type="button" class="tp-chip">카페·베이커리</button></li>
+                    <li><button type="button" class="tp-chip">음식점·술집</button></li>
+                    <li><button type="button" class="tp-chip">뷰티·피트니스</button></li>
+                    <li><button type="button" class="tp-chip">도·소매업</button></li>
+                    <li><button type="button" class="tp-chip">꽃집</button></li>
+                    <li><button type="button" class="tp-chip">무인매장</button></li>
+                    <li><button type="button" class="tp-chip">교육·학원</button></li>
+                    <li><button type="button" class="tp-chip">병원·약국</button></li>
+                    <li><button type="button" class="tp-chip">기타</button></li>
+                </ul>
+                <a class="tp-btn tp-btn--primary tp-btn--lg" href="#closing">빠른 상담 받기</a>
+            </div>
+        </div>
+
+        <!-- fullPage: 중간 = 콘텐츠 높이만큼 자연 스크롤 (fp-auto-height) -->
+        <div class="section fp-auto-height section-stream" data-anchor="stream" id="stream">
+            <div class="section-stream__inner">
+                <section class="tp-block" aria-labelledby="block-products">
+                    <h2 id="block-products" class="tp-block__title">제품 소개</h2>
+                    <p class="tp-block__lede">결제부터 매출·재고까지, 매장 운영에 필요한 기능을 한 화면에서. 카드·간편결제·포스·정산을 PracticeSpace 하나로 묶었습니다.</p>
+                    <div class="tp-cards">
+                        <article class="tp-card"><h3 class="tp-card__t">결제</h3><p class="tp-card__p">다양한 결제 수단과 빠른 승인, 영수증·취소도 앱에서.</p></article>
+                        <article class="tp-card"><h3 class="tp-card__t">포스</h3><p class="tp-card__p">주문·테이블·메뉴 관리를 직관적인 UI로.</p></article>
+                        <article class="tp-card"><h3 class="tp-card__t">매출 리포트</h3><p class="tp-card__p">시간대·메뉴별 매출을 그래프로 바로 확인.</p></article>
+                    </div>
+                </section>
+
+                <section class="tp-block tp-block--alt" aria-labelledby="block-industry">
+                    <h2 id="block-industry" class="tp-block__title">업종별 기능</h2>
+                    <p class="tp-block__lede">카페는 테이크아웃·적립, 음식점은 예약·웨이팅, 무인매장은 원격 모니터링까지. 업종에 맞춘 기본 설정을 제공합니다.</p>
+                    <ul class="tp-list">
+                        <li>업종 템플릿으로 초기 세팅 시간 단축</li>
+                        <li>주요 POS·주문 앱과 연동</li>
+                        <li>매장 규모에 맞는 요금제</li>
+                    </ul>
+                </section>
+
+                <section class="tp-block" aria-labelledby="block-combo">
+                    <h2 id="block-combo" class="tp-block__title">추천 조합</h2>
+                    <p class="tp-block__lede">오픈 매장 사장님들이 많이 선택한 결제 + 포스 + 정산 패키지를 모아두었습니다.</p>
+                    <div class="tp-combo-row">
+                        <div class="tp-combo"><span class="tp-combo__name">오픈 패키지 A</span><span class="tp-combo__meta">결제 + 기본 포스</span></div>
+                        <div class="tp-combo"><span class="tp-combo__name">오픈 패키지 B</span><span class="tp-combo__meta">결제 + 포스 + 재고</span></div>
+                        <div class="tp-combo"><span class="tp-combo__name">무인 스탠다드</span><span class="tp-combo__meta">키오스크 + 원격 알림</span></div>
+                    </div>
+                </section>
+
+                <section class="tp-block tp-block--alt" aria-labelledby="block-story">
+                    <h2 id="block-story" class="tp-block__title">사장님 스토리</h2>
+                    <p class="tp-block__lede">도입 전후 매출·운영 시간 변화를 인터뷰 형식으로 정리했습니다. (데모 콘텐츠)</p>
+                    <blockquote class="tp-quote">“결제 건별로 문자 오던 시절이 끝났어요. 앱 하나로 다 보입니다.”</blockquote>
+                </section>
+
+                <section class="tp-block" aria-labelledby="block-benefit">
+                    <h2 id="block-benefit" class="tp-block__title">혜택</h2>
+                    <p class="tp-block__lede">이벤트·제휴 할인·무이자 할부 등 진행 중인 혜택을 이 영역에 노출합니다.</p>
+                </section>
+            </div>
+        </div>
+
+        <!-- fullPage: 마지막 CTA + 푸터 (콘텐츠 높이만큼 자연 스크롤) -->
+        <div class="section fp-auto-height section-closing" data-anchor="closing" id="closing">
+            <div class="section-closing__hero">
+                <h2 class="section-closing__title">매장 운영, 지금 바로 가볍게 시작하세요</h2>
+                <p class="section-closing__sub">담당자가 업종과 규모에 맞춰 안내해 드립니다.</p>
+                <div class="section-closing__actions">
+                    <a class="tp-btn tp-btn--inverse tp-btn--lg" href="#">빠른 상담 받기</a>
+                    <a class="tp-btn tp-btn--ghost-inverse" href="#stream">자료 더 보기</a>
+                </div>
+            </div>
+            <footer class="tp-footer" id="page-footer">
+                <div class="tp-footer__inner">
+                    <div class="tp-footer__cols">
+                        <div class="tp-footer__col">
+                            <p class="tp-footer__head">Products</p>
+                            <ul>
+                                <li><a href="products.html">PracticeSpace POS</a></li>
+                                <li><a href="products.html#billing">Payments &amp; settlement</a></li>
+                                <li><a href="products.html#pricing">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="tp-footer__col">
+                            <p class="tp-footer__head">Support</p>
+                            <ul>
+                                <li><a href="customer-support.html">User guide</a></li>
+                                <li><a href="company-news.html">Notices</a></li>
+                                <li><a href="customer-support.html#faq">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="tp-footer__col">
+                            <p class="tp-footer__head">Company</p>
+                            <ul>
+                                <li><a href="about-us.html">About us</a></li>
+                                <li><a href="company-news.html#careers">Careers</a></li>
+                                <li><a href="reviews-inquiries.html#ethics">Ethics &amp; reporting</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="tp-footer__legal">Copyright © 2026 PracticeSpace. 학습·연습용 데모 페이지입니다.</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullpage.js@4.0.29/dist/fullpage.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@egjs/flicking@4.11.4/dist/flicking.pkgd.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
