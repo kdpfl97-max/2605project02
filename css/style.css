@@ -711,6 +711,218 @@ body.nav-open {
   max-width: min(48rem, 100%);
 }
 
+/* —— 회사뉴스: Featured 3열 카드 그리드 —— */
+.sub-main--news {
+  max-width: min(72rem, 100%);
+}
+
+.news-page-head {
+  margin-bottom: 2rem;
+}
+
+.sub-main--news .news-page-head__lede {
+  margin: 0.75rem 0 0;
+  line-height: 1.65;
+  color: var(--tp-muted);
+  font-size: 0.9375rem;
+}
+
+.news-featured {
+  margin-bottom: 3rem;
+}
+
+.news-featured__head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.news-featured__star {
+  display: flex;
+  color: #14b8a6;
+}
+
+.sub-main--news h2.news-featured__title {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.news-featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .news-featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .news-featured__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.35rem 1.35rem 1.15rem;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  color: #111;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+  transition:
+    background-color 0.28s ease,
+    color 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.25s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .news-card:hover,
+  .news-card:focus-within {
+    background: #111;
+    border-color: rgba(255, 255, 255, 0.22);
+    color: #fff;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+    transform: translateY(-3px);
+  }
+
+  .news-card:hover .news-card__icon,
+  .news-card:focus-within .news-card__icon {
+    color: #fff;
+    opacity: 1;
+  }
+
+  .news-card:hover .news-card__t,
+  .news-card:focus-within .news-card__t,
+  .news-card:hover .news-card__arrow,
+  .news-card:focus-within .news-card__arrow {
+    color: #fff;
+  }
+
+  .news-card:hover .news-card__desc,
+  .news-card:focus-within .news-card__desc {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .news-card:hover .news-card__badge--update,
+  .news-card:focus-within .news-card__badge--update {
+    background: #fff;
+    color: #03c75a;
+  }
+
+  .news-card:hover .news-card__badge--beta,
+  .news-card:focus-within .news-card__badge--beta {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.news-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.news-card__icon {
+  display: flex;
+  color: #111;
+  opacity: 0.92;
+}
+
+.news-card__badge {
+  flex-shrink: 0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.news-card__badge--update {
+  background: #03c75a;
+  color: #fff;
+}
+
+.news-card__badge--beta {
+  background: #fff;
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.news-card__t {
+  margin: 0 0 0.5rem;
+  font-family: Inter, "Noto Sans KR", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: #111;
+}
+
+.news-card__desc {
+  margin: 0;
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #5c5c5c;
+}
+
+.news-card__arrow {
+  display: block;
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: #111;
+  opacity: 0.75;
+}
+
+.news-aside {
+  padding-top: 2rem;
+  border-top: 1px solid var(--tp-line);
+}
+
+.sub-main--news h2.news-aside__h {
+  margin: 1.75rem 0 0.65rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.sub-main--news h2.news-aside__h:first-child {
+  margin-top: 0;
+}
+
+.sub-main--news ul.news-aside__list {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--tp-muted);
+  line-height: 1.65;
+}
+
+.sub-main--news .news-aside__p {
+  margin: 0;
+  color: var(--tp-muted);
+  line-height: 1.65;
+  font-size: 0.9375rem;
+}
+
 /* —— Products: Awards + 쇼케이스 (전역 다크와 동일 헤더) —— */
 .subpage-body--products {
   overflow-x: hidden;
