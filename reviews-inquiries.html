@@ -27,15 +27,63 @@
             </nav>
         </div>
     </header>
-    <main class="sub-main">
+    <main class="sub-main sub-main--inquiries">
         <h1>문의사항</h1>
-        <p>도입 상담·기술 지원·제휴 등 <strong>문의 채널</strong>을 안내하는 페이지입니다. PracticeSpace는 데모이므로 아래 내용은 형식 예시입니다.</p>
+        <p>도입 상담·기술 지원·제휴 등 <strong>문의 채널</strong>을 안내하는 페이지입니다. PracticeSpace는 데모이므로 아래 차트·Q&A는 형식 예시입니다.</p>
+
+        <section class="ri-radar" aria-labelledby="ri-radar-heading">
+            <h2 id="ri-radar-heading">고객 문의 유형 분포</h2>
+            <p class="ri-radar__lede">문의 접수를 축으로 한 <strong>레이더 차트</strong> 데모입니다. 꼭지마다 가중치가 천천히 변하는 시연용 애니메이션이며, 실제 통계가 아닙니다.</p>
+            <figure class="ri-radar__figure">
+                <canvas id="inquiry-radar-canvas" width="400" height="400" aria-label="문의 유형별 상대 비중 레이더 차트"></canvas>
+                <figcaption class="ri-radar__caption">축: 도입·견적 · 기술·장애 · 제휴·교육 · 정산·요금 · 기타</figcaption>
+            </figure>
+        </section>
+
         <h2>문의 유형</h2>
         <ul>
             <li><strong>도입·견적</strong> — 매장 규모, 필요 기능, 희망 일정을 남겨 주세요.</li>
             <li><strong>기술·장애</strong> — 오류 메시지, 발생 화면, 재현 순서를 함께 적어 주시면 대응에 도움이 됩니다.</li>
             <li><strong>제휴·교육</strong> — 협력 제안이나 교육·워크숍 문의를 받을 수 있습니다.</li>
         </ul>
+
+        <section class="ri-qa" aria-labelledby="ri-qa-heading" id="qa-one-to-one">
+            <h2 id="ri-qa-heading">1:1 문의 답변</h2>
+            <p class="ri-qa__intro">티켓 형태의 <strong>질문–답변</strong> 게시 예시입니다. 번호·일시는 가상 데이터입니다.</p>
+            <div class="ri-qa__grid">
+                <article class="ri-qa-card">
+                    <header class="ri-qa-card__head">
+                        <span class="ri-qa-card__meta">#INV-2026-0412 · 처리완료</span>
+                        <h3 class="ri-qa-card__q"><span class="ri-qa-card__mark" aria-hidden="true">Q</span> 소규모 카페인데 결제 단말만 단독으로 쓸 수 있나요?</h3>
+                    </header>
+                    <div class="ri-qa-card__a">
+                        <span class="ri-qa-card__mark ri-qa-card__mark--a" aria-hidden="true">A</span>
+                        <p>가능합니다. POS 없이 결제 단말·영수증만 사용하는 경량 플랜을 검토할 수 있으며, 이후 매장이 커지면 포스 모듈을 추가하는 식으로 확장하는 패턴을 안내해 드립니다. (데모 답변)</p>
+                    </div>
+                </article>
+                <article class="ri-qa-card">
+                    <header class="ri-qa-card__head">
+                        <span class="ri-qa-card__meta">#TEC-2026-0408 · 처리완료</span>
+                        <h3 class="ri-qa-card__q"><span class="ri-qa-card__mark" aria-hidden="true">Q</span> 간헐적으로 승인 타임아웃이 뜹니다. 로그는 어디서 보나요?</h3>
+                    </header>
+                    <div class="ri-qa-card__a">
+                        <span class="ri-qa-card__mark ri-qa-card__mark--a" aria-hidden="true">A</span>
+                        <p>관리자 앱 <strong>설정 → 진단</strong>에서 해당 단말기를 선택하면 최근 세션 로그를 내려받을 수 있습니다. 타임아웃이면 네트워크 지연·카드사 응답 지연 여부를 함께 확인해 주세요. (데모 답변)</p>
+                    </div>
+                </article>
+                <article class="ri-qa-card">
+                    <header class="ri-qa-card__head">
+                        <span class="ri-qa-card__meta">#BIL-2026-0330 · 답변등록</span>
+                        <h3 class="ri-qa-card__q"><span class="ri-qa-card__mark" aria-hidden="true">Q</span> 정산 주기를 주 단위로 바꾸려면 서류가 필요한가요?</h3>
+                    </header>
+                    <div class="ri-qa-card__a">
+                        <span class="ri-qa-card__mark ri-qa-card__mark--a" aria-hidden="true">A</span>
+                        <p>계약 단계에서 정산 주기가 정해지며, 변경 시에는 대표자 확인용 서류가 필요할 수 있습니다. 구체 일정은 담당자 배정 후 1:1로 안내드립니다. (데모 답변)</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <h2>연락처 (예시)</h2>
         <p>이메일 <code>contact@example.com</code> · 평일 09:00–18:00 (데모용 텍스트)</p>
         <p>자주 묻는 질문은 <a href="customer-support.html#faq">커뮤니티 FAQ</a>에서 먼저 확인해 주세요.</p>

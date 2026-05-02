@@ -113,4 +113,141 @@
     },
     { passive: true }
   );
+
+  /** 문의사항 페이지: 고객 문의 레이더 차트 (Canvas, 시연용 애니메이션) */
+  function initInquiryRadar() {
+    var canvas = document.getElementById("inquiry-radar-canvas");
+    if (!canvas || !canvas.getContext) return;
+
+    var ctx = canvas.getContext("2d");
+    var labels = ["도입·견적", "기술·장애", "제휴·교육", "정산·요금", "기타"];
+    var base = [0.74, 0.7, 0.48, 0.62, 0.55];
+    var n = labels.length;
+    var rafId = 0;
+    var t0 = performance.now();
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var cssSize = 360;
+
+    function clamp(x, lo, hi) {
+      return Math.max(lo, Math.min(hi, x));
+    }
+
+    function layout() {
+      var parent = canvas.parentElement;
+      var maxW = parent ? Math.min(parent.clientWidth || 400, 440) : 400;
+      cssSize = Math.max(260, maxW);
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.style.width = cssSize + "px";
+      canvas.style.height = cssSize + "px";
+      canvas.width = Math.round(cssSize * dpr);
+      canvas.height = Math.round(cssSize * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    function valueAt(i, elapsedMs) {
+      if (reduced) return base[i];
+      var wobble = 0.1 * Math.sin(elapsedMs * 0.0018 + i * 1.35);
+      return clamp(base[i] + wobble, 0.28, 0.95);
+    }
+
+    function drawFrame(now) {
+      var elapsed = reduced ? 0 : now - t0;
+      var cx = cssSize * 0.5;
+      var cy = cssSize * 0.52;
+      var maxR = cssSize * 0.34;
+
+      ctx.clearRect(0, 0, cssSize, cssSize);
+
+      var ring;
+      for (ring = 1; ring <= 4; ring++) {
+        var rr = (maxR * ring) / 4;
+        ctx.beginPath();
+        var i;
+        for (i = 0; i <= n; i++) {
+          var idx = i % n;
+          var ang = -Math.PI / 2 + (idx * 2 * Math.PI) / n;
+          var x = cx + rr * Math.cos(ang);
+          var y = cy + rr * Math.sin(ang);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = "rgba(0, 27, 55, 0.08)";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      ctx.strokeStyle = "rgba(0, 27, 55, 0.12)";
+      for (var j = 0; j < n; j++) {
+        var a = -Math.PI / 2 + (j * 2 * Math.PI) / n;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(cx + maxR * Math.cos(a), cy + maxR * Math.sin(a));
+        ctx.stroke();
+      }
+
+      ctx.beginPath();
+      for (var k = 0; k <= n; k++) {
+        var ii = k % n;
+        var ang2 = -Math.PI / 2 + (ii * 2 * Math.PI) / n;
+        var val = valueAt(ii, elapsed);
+        var rk = maxR * val;
+        var px = cx + rk * Math.cos(ang2);
+        var py = cy + rk * Math.sin(ang2);
+        if (k === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.closePath();
+      ctx.fillStyle = "rgba(49, 130, 246, 0.18)";
+      ctx.fill();
+      ctx.strokeStyle = "#3182f6";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      for (var v = 0; v < n; v++) {
+        var aa = -Math.PI / 2 + (v * 2 * Math.PI) / n;
+        var vv = valueAt(v, elapsed);
+        var px2 = cx + maxR * vv * Math.cos(aa);
+        var py2 = cy + maxR * vv * Math.sin(aa);
+        ctx.beginPath();
+        ctx.arc(px2, py2, 4, 0, Math.PI * 2);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+        ctx.strokeStyle = "#3182f6";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      ctx.font = '600 12px "Noto Sans KR", system-ui, sans-serif';
+      ctx.fillStyle = "#6b7684";
+      for (var L = 0; L < n; L++) {
+        var aa3 = -Math.PI / 2 + (L * 2 * Math.PI) / n;
+        var lr = maxR + 22;
+        var lx = cx + lr * Math.cos(aa3);
+        var ly = cy + lr * Math.sin(aa3);
+        var tw = ctx.measureText(labels[L]).width;
+        ctx.fillText(labels[L], lx - tw / 2, ly + 4);
+      }
+
+      if (!reduced) rafId = window.requestAnimationFrame(drawFrame);
+    }
+
+    layout();
+    if (reduced) {
+      drawFrame(t0);
+    } else {
+      rafId = window.requestAnimationFrame(drawFrame);
+    }
+
+    window.addEventListener(
+      "resize",
+      function () {
+        layout();
+        if (reduced) drawFrame(t0);
+      },
+      { passive: true }
+    );
+  }
+
+  initInquiryRadar();
 })();
