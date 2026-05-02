@@ -6,10 +6,11 @@
     <title>PracticeSpace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@4.0.29/dist/fullpage.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@egjs/flicking@4.11.4/dist/flicking.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css">
 </head>
 <body>
     <header class="tp-header">
@@ -33,7 +34,7 @@
     <main id="fullpage" class="tp-main" aria-label="PracticeSpace 메인">
         <!-- fullPage: 첫 풀뷰 -->
         <div class="section section-intro" data-anchor="intro">
-            <div id="intro-bg-flicking" class="intro-bg-flicking flicking-viewport" aria-hidden="true" tabindex="-1">
+            <div id="intro-bg-flicking" class="intro-bg-flicking flicking-viewport" data-lenis-prevent aria-hidden="true" tabindex="-1">
                 <div class="flicking-camera">
                     <div class="flicking-panel">
                         <img src="https://picsum.photos/id/180/1920/1080" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
@@ -185,6 +186,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/fullpage.js@4.0.29/dist/fullpage.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@egjs/flicking@4.11.4/dist/flicking.pkgd.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js" defer></script>
     <script src="js/script.js" defer></script>
 </body>
 </html>

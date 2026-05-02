@@ -6,10 +6,11 @@
     <title>회사소개 — PracticeSpace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css">
 </head>
-<body class="subpage-body">
+<body class="subpage-body subpage-body--about">
     <header class="tp-header">
         <div class="tp-header__inner">
             <a href="index.html" class="tp-logo" aria-label="PracticeSpace 홈">
@@ -27,21 +28,160 @@
             </nav>
         </div>
     </header>
-    <main class="sub-main">
-        <h1>회사소개</h1>
-        <p><strong>PracticeSpace</strong>는 소상공인·매장 운영 화면을 가상으로 구성해 보는 <strong>학습·연습용 데모</strong>입니다. 실제 결제나 계약이 이루어지지 않습니다.</p>
-        <h2>비전</h2>
-        <p>복잡한 매장 시스템을 한눈에 이해할 수 있도록, 결제·POS·정산 흐름을 단계별로 익힐 수 있는 연습 환경을 제공합니다.</p>
-        <h2>이 사이트에서 할 수 있는 것</h2>
-        <ul>
-            <li>메인 페이지에서 풀뷰·본문·상담 영역 흐름 익히기</li>
-            <li>제품·뉴스·문의·커뮤니티 메뉴 간 이동과 레이아웃 확인</li>
-            <li>반응형 헤더·내비게이션 동작 연습</li>
-        </ul>
-        <h2>문의</h2>
-        <p>실제 제휴·도입 문의는 <a href="reviews-inquiries.html">문의사항</a> 페이지 안내를 참고해 주세요. (데모용 링크)</p>
-        <a class="sub-back" href="index.html">← 홈으로</a>
+
+    <section class="about-hero" aria-labelledby="about-hero-heading">
+        <div class="about-hero__inner">
+            <h1 id="about-hero-heading" class="about-hero__title">About Us</h1>
+        </div>
+        <p class="about-hero__tagline">PracticeSpace · 회사 소개</p>
+    </section>
+
+    <main class="sub-main sub-main--about">
+        <header class="about-editorial">
+            <p class="about-editorial__eyebrow">( PracticeSpace · Learning demo · 2026 )</p>
+            <h2 class="about-content__title">회사소개</h2>
+            <p class="about-content__lede"><strong>PracticeSpace</strong>는 소상공인·매장 운영 화면을 가상으로 구성해 보는 <strong>학습·연습용 데모</strong>입니다. 실제 결제나 계약이 이루어지지 않습니다.</p>
+        </header>
+
+        <section class="about-philosophy" aria-labelledby="about-philosophy-heading">
+            <div class="about-philosophy__left">
+                <p class="about-philosophy__tag">{ High-end Digital Production }</p>
+                <h2 id="about-philosophy-heading" class="about-philosophy__title">How we craft essentials</h2>
+                <p class="about-philosophy__lede">PracticeSpace : 우리가 본질을 빚어내는 방식</p>
+                <figure class="about-philosophy__figure">
+                    <img src="https://picsum.photos/id/189/640/960?grayscale" alt="" width="640" height="960" loading="lazy" decoding="async">
+                </figure>
+            </div>
+            <div class="about-philosophy__right">
+                <div class="about-acc">
+                    <details class="about-acc__item" name="about-essentials">
+                        <summary class="about-acc__summary">
+                            <span class="about-acc__text">
+                                <span class="about-acc__ko">직관과 데이터의 전략적 설계</span>
+                                <span class="about-acc__en">Strategic design of intuition and data</span>
+                            </span>
+                            <span class="about-acc__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="about-acc__panel">
+                            <p>매장 흐름을 화면 단위로 쪼개어, 직관과 수치가 함께 읽히는 연습 구조를 지향합니다.</p>
+                        </div>
+                    </details>
+                    <details class="about-acc__item" name="about-essentials">
+                        <summary class="about-acc__summary">
+                            <span class="about-acc__text">
+                                <span class="about-acc__ko">고효율·고감도 디지털 빌드 시스템</span>
+                                <span class="about-acc__en">High-efficiency, high-sensitivity digital build system</span>
+                            </span>
+                            <span class="about-acc__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="about-acc__panel">
+                            <p>결제·POS·정산 UI를 가볍게 유지하면서도, 실무에 가까운 밀도를 담은 데모 빌드입니다.</p>
+                        </div>
+                    </details>
+                    <details class="about-acc__item" name="about-essentials">
+                        <summary class="about-acc__summary">
+                            <span class="about-acc__text">
+                                <span class="about-acc__ko">독보적 서사를 담은 AI 비주얼 생성</span>
+                                <span class="about-acc__en">AI visual generation with a unique narrative</span>
+                            </span>
+                            <span class="about-acc__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="about-acc__panel">
+                            <p>인트로·카드 등 시각 요소로 브랜드 톤을 유지하며, 학습 동선을 따라가는 내러티브를 구성합니다.</p>
+                        </div>
+                    </details>
+                    <details class="about-acc__item" name="about-essentials">
+                        <summary class="about-acc__summary">
+                            <span class="about-acc__text">
+                                <span class="about-acc__ko">본질에 집중하는 콘텐츠 최적화</span>
+                                <span class="about-acc__en">Content optimization focusing on the essence</span>
+                            </span>
+                            <span class="about-acc__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="about-acc__panel">
+                            <p>불필요한 기능 설명을 줄이고, 사장님이 바로 손대 볼 수 있는 핵심 경로에 집중합니다.</p>
+                        </div>
+                    </details>
+                    <details class="about-acc__item" name="about-essentials">
+                        <summary class="about-acc__summary">
+                            <span class="about-acc__text">
+                                <span class="about-acc__ko">미세한 감각이 만드는 시각적 조화</span>
+                                <span class="about-acc__en">Visual harmony created by subtle senses</span>
+                            </span>
+                            <span class="about-acc__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="about-acc__panel">
+                            <p>타이포·여백·모션의 간격을 맞춰, 긴 연습에도 눈이 편한 화면 균형을 맞춥니다.</p>
+                        </div>
+                    </details>
+                    <details class="about-acc__item" name="about-essentials">
+                        <summary class="about-acc__summary">
+                            <span class="about-acc__text">
+                                <span class="about-acc__ko">브랜드의 지속 가능한 성장 시스템</span>
+                                <span class="about-acc__en">Sustainable growth system for brands</span>
+                            </span>
+                            <span class="about-acc__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="about-acc__panel">
+                            <p>데모이지만 확장 가능한 정보 구조를 염두에 두고, 이후 실서비스로 옮길 때를 상정합니다.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <footer class="about-philosophy__foot">
+                <span>© PracticeSpace narrative</span>
+                <span>( PracticeSpace )</span>
+                <span>CORE PHILOSOPHY</span>
+            </footer>
+        </section>
+
+        <h2 class="about-prose__h">문의</h2>
+        <p class="about-prose__p">실제 제휴·도입 문의는 <a href="reviews-inquiries.html">문의사항</a> 페이지 안내를 참고해 주세요. (데모용 링크)</p>
+
+        <section class="about-card-news" aria-labelledby="about-card-news-heading">
+            <div class="about-card-news__head">
+                <p class="about-card-news__eyebrow">Selected stories · 데모 카드</p>
+                <h2 id="about-card-news-heading" class="about-card-news__title">WORKS</h2>
+            </div>
+            <div class="about-card-news__grid">
+                <article class="about-card about-card--split">
+                    <div class="about-card__media" aria-hidden="true">
+                        <img src="https://picsum.photos/id/48/800/600" alt="" width="800" height="600" loading="lazy" decoding="async">
+                    </div>
+                    <div class="about-card__panel">
+                        <span class="about-card__accent" aria-hidden="true"></span>
+                        <h3 class="about-card__h">THE ART OF<br>STORE FLOW</h3>
+                        <p class="about-card__meta">Urban retail · 연습용 카피</p>
+                    </div>
+                </article>
+                <article class="about-card about-card--cover">
+                    <img class="about-card__bg" src="https://picsum.photos/id/201/800/600" alt="" width="800" height="600" loading="lazy" decoding="async">
+                    <div class="about-card__overlay"></div>
+                    <div class="about-card__cover-body">
+                        <h3 class="about-card__cover-title">Arche<span class="about-card__reg">®</span></h3>
+                        <p class="about-card__cover-sub">Space, rhythm, settlement — 데모 비주얼</p>
+                    </div>
+                </article>
+                <article class="about-card about-card--paper">
+                    <span class="about-card__star" aria-hidden="true">*</span>
+                    <p class="about-card__paper-lede">POS · 결제 · 리포트를 한 화면에서 익히는 흐름을 가정한 레이아웃 예시입니다.</p>
+                    <div class="about-card__paper-ui" aria-hidden="true">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <h3 class="about-card__paper-brand">VELO</h3>
+                </article>
+                <article class="about-card about-card--product">
+                    <img src="https://picsum.photos/id/429/800/600" alt="데모용 정적 제품 이미지" width="800" height="600" loading="lazy" decoding="async">
+                </article>
+            </div>
+        </section>
+
+        <a class="sub-back sub-back--about" href="index.html">← 홈으로</a>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="js/about-us-gsap.js"></script>
 </body>
 </html>

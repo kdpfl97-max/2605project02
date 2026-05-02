@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제품 소개 (Products) — PracticeSpace</title>
+    <title>Awards — PracticeSpace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css">
 </head>
-<body class="subpage-body">
+<body class="subpage-body subpage-body--products">
     <header class="tp-header">
         <div class="tp-header__inner">
             <a href="index.html" class="tp-logo" aria-label="PracticeSpace 홈">
@@ -27,17 +28,152 @@
             </nav>
         </div>
     </header>
-    <main class="sub-main">
-        <h1>제품 소개 <span class="sub-heading-en">Products</span></h1>
-        <p>아래는 PracticeSpace 데모를 위해 구성한 <strong>가상 제품군</strong>입니다. 실제 판매·구독과 무관합니다.</p>
-        <h2 id="billing">결제 · 정산</h2>
-        <p>카드·간편결제 승인, 일별·주별 매출 집계, 정산 내역보내기 등 매장에서 자주 쓰는 결제 흐름을 화면 예시로 구성할 수 있습니다.</p>
-        <h2>포스 · 주문</h2>
-        <p>테이블·메뉴·주문 상태를 한 화면에서 관리하는 POS 데모, 키오스크·무인 매장용 간단 주문 흐름 등을 연습용으로 넣을 수 있습니다.</p>
-        <h2 id="pricing">요금 안내</h2>
-        <p>매장 규모(카운터 수·업종 팩)에 따라 요금표를 나누는 방식의 <strong>샘플 요금제</strong>를 이 영역에 두면 됩니다. 실제 견적은 별도 계약이 필요합니다.</p>
-        <a class="sub-back" href="index.html">← 홈으로</a>
+
+    <main class="sub-main sub-main--products">
+        <header class="products-awards__strip" aria-label="페이지 상단 메타">
+            <p class="products-awards__strip-left">
+                <span class="products-awards__strip-dot" aria-hidden="true"></span>
+                © THE ESSENCE OF PRESENCE
+            </p>
+            <p class="products-awards__strip-mid">(STRATEGIC INTELLIGENCE — 27)</p>
+            <p class="products-awards__strip-right">FUNCTIONAL CLARITY</p>
+        </header>
+
+        <div class="products-awards__hero">
+            <h1 class="products-awards__title">
+                Awards<sup class="products-awards__sup">(27)</sup>
+            </h1>
+        </div>
+
+        <div class="products-awards__table-wrap">
+            <table class="products-awards__table">
+                <caption class="products-awards__caption">Awards 및 Brands 목록</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Awards</td>
+                        <td>히다협</td>
+                        <td>Red Dot, iF, IDEA Design Award</td>
+                        <td>2021</td>
+                    </tr>
+                    <tr>
+                        <td>Awards</td>
+                        <td>현대 한스톤</td>
+                        <td>Hyundai Hanstone Construction/Architecture Grand Prize</td>
+                        <td>2020</td>
+                    </tr>
+                    <tr>
+                        <td>Brands</td>
+                        <td>아모레퍼시픽</td>
+                        <td>Aritaum, Mamonde, Innisfree, Etude, eSpoir</td>
+                        <td>~2018</td>
+                    </tr>
+                    <tr>
+                        <td>Awards</td>
+                        <td>LG그룹</td>
+                        <td>LG Group Corporate Web Integrated Grand Prize</td>
+                        <td>2012</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section class="products-showcase" aria-labelledby="products-showcase-heading">
+            <h2 id="products-showcase-heading" class="products-showcase__heading">Investment for Excellence</h2>
+            <div class="products-tier-grid">
+                <article class="products-tier products-tier--essential">
+                    <div class="products-tier__head">
+                        <span class="products-tier__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span class="products-tier__pill">Essential</span>
+                    </div>
+                    <h3 class="products-tier__title">본질에 집중한 강력한 첫인상</h3>
+                    <ul class="products-tier__list">
+                        <li>원페이지 브랜드 런칭</li>
+                        <li>데스크탑/모바일 최적화</li>
+                        <li>커스텀 모션 적용</li>
+                        <li>Fast &amp; Sharp</li>
+                    </ul>
+                </article>
+                <article class="products-tier products-tier--signature">
+                    <div class="products-tier__head">
+                        <span class="products-tier__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l10 5v10L12 22 2 17V7l10-5z" stroke-linejoin="round"/><path d="M12 22V12M2 7l10 5 10-5" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span class="products-tier__pill">Signature</span>
+                    </div>
+                    <h3 class="products-tier__title">비즈니스의 가치를 증명하는 플랫폼</h3>
+                    <ul class="products-tier__list">
+                        <li>멀티페이지(~10p)</li>
+                        <li>관리자 페이지(CMS) 연동</li>
+                        <li>몰입감을 높이는 모션 디테일</li>
+                        <li>Pure Intelligence</li>
+                    </ul>
+                </article>
+                <article class="products-tier products-tier--masterpiece">
+                    <div class="products-tier__head">
+                        <span class="products-tier__icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3L3 8v8l9 5 9-5V8l-9-5z" stroke-linejoin="round"/><path d="M3 8l9 5 9-5M12 13v8" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span class="products-tier__pill">Masterpiece</span>
+                    </div>
+                    <h3 class="products-tier__title">정갈한 품격의 하이엔드 브랜드</h3>
+                    <ul class="products-tier__list">
+                        <li>멀티페이지(10p~)</li>
+                        <li>20년 경력 마스터 직접 디렉팅</li>
+                        <li>독점적 브랜드 경험 설계</li>
+                        <li>Absolute Value</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="products-showcase__cta-wrap">
+                <a class="products-showcase__cta" href="#">MASTER PROCESS GUIDE (PDF)</a>
+            </div>
+
+            <div class="products-slider-block">
+                <header class="products-slider__strip" aria-label="아카이브 메타">
+                    <p class="products-slider__strip-left">
+                        <span class="products-awards__strip-dot" aria-hidden="true"></span>
+                        © DRAFT.X ARCHIVE
+                    </p>
+                    <p class="products-slider__strip-mid">(GLOBAL STUDIO — 20Y)</p>
+                    <p class="products-slider__strip-right">BEYOND DIGITAL ESSENCE</p>
+                </header>
+                <div class="products-marquee" role="region" aria-label="카드 뉴스 이미지 슬라이드">
+                    <div class="products-marquee__track">
+                        <ul class="products-marquee__list">
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/292/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/338/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/64/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/201/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/177/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/28/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                        </ul>
+                        <ul class="products-marquee__list" aria-hidden="true">
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/292/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/338/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/64/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/201/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/177/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                            <li class="products-marquee__slide"><img src="https://picsum.photos/id/28/400/520" alt="" width="400" height="520" loading="lazy" decoding="async"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="products-awards__note">레이아웃·카피는 레퍼런스 이미지 기준 데모용입니다. PracticeSpace는 학습·연습용 사이트입니다.</p>
+        <a class="sub-back sub-back--products" href="index.html">← 홈으로</a>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

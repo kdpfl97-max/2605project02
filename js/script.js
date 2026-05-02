@@ -110,6 +110,9 @@
         fullpage_api.setPaddingTop(headerPadding());
       }
       resizeIntroBgFlicking();
+      if (window.tpLenis && typeof window.tpLenis.resize === "function") {
+        window.tpLenis.resize();
+      }
     },
     { passive: true }
   );
@@ -172,12 +175,12 @@
           else ctx.lineTo(x, y);
         }
         ctx.closePath();
-        ctx.strokeStyle = "rgba(0, 27, 55, 0.08)";
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
         ctx.lineWidth = 1;
         ctx.stroke();
       }
 
-      ctx.strokeStyle = "rgba(0, 27, 55, 0.12)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.12)";
       for (var j = 0; j < n; j++) {
         var a = -Math.PI / 2 + (j * 2 * Math.PI) / n;
         ctx.beginPath();
@@ -198,9 +201,9 @@
         else ctx.lineTo(px, py);
       }
       ctx.closePath();
-      ctx.fillStyle = "rgba(49, 130, 246, 0.18)";
+      ctx.fillStyle = "rgba(110, 168, 255, 0.22)";
       ctx.fill();
-      ctx.strokeStyle = "#3182f6";
+      ctx.strokeStyle = "#6ea8ff";
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -211,15 +214,15 @@
         var py2 = cy + maxR * vv * Math.sin(aa);
         ctx.beginPath();
         ctx.arc(px2, py2, 4, 0, Math.PI * 2);
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = "#0a0a0a";
         ctx.fill();
-        ctx.strokeStyle = "#3182f6";
+        ctx.strokeStyle = "#6ea8ff";
         ctx.lineWidth = 2;
         ctx.stroke();
       }
 
       ctx.font = '600 12px "Noto Sans KR", system-ui, sans-serif';
-      ctx.fillStyle = "#6b7684";
+      ctx.fillStyle = "rgba(242, 242, 242, 0.5)";
       for (var L = 0; L < n; L++) {
         var aa3 = -Math.PI / 2 + (L * 2 * Math.PI) / n;
         var lr = maxR + 22;
@@ -250,4 +253,28 @@
   }
 
   initInquiryRadar();
+
+  /**
+   * 전역 스무스 스크롤 (Lenis). 휠·터치 관성, 앵커 이동까지 자연스럽게 이어지도록 설정.
+   * prefers-reduced-motion: reduce 인 경우 비활성화(접근성).
+   */
+  function initLenisSmoothScroll() {
+    if (typeof Lenis === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var lenis = new Lenis({
+      lerp: 0.072,
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 1,
+      syncTouch: true,
+      syncTouchLerp: 0.075,
+      anchors: true,
+      autoRaf: true
+    });
+
+    window.tpLenis = lenis;
+  }
+
+  initLenisSmoothScroll();
 })();
