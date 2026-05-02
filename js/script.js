@@ -277,4 +277,27 @@
   }
 
   initLenisSmoothScroll();
+
+  /** AOS (스크롤 등장). data-aos가 있는 페이지만 초기화. Lenis와 함께 쓰일 때 refresh 연동 */
+  function initAOS() {
+    if (typeof AOS === "undefined") return;
+    if (!document.querySelector("[data-aos]")) return;
+
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    AOS.init({
+      duration: reduced ? 0 : 650,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 48,
+      disable: reduced
+    });
+
+    if (!reduced && window.tpLenis && typeof window.tpLenis.on === "function") {
+      window.tpLenis.on("scroll", function () {
+        AOS.refresh();
+      });
+    }
+  }
+
+  initAOS();
 })();

@@ -11,6 +11,10 @@
   --tp-muted: rgba(242, 242, 242, 0.55);
   --tp-line: rgba(255, 255, 255, 0.12);
   --header-h: 4rem;
+  /* 큰 콘텐츠 블록 사이 수직 여백 (메인 스트림·서브페이지 공통) */
+  --tp-stack-gap: clamp(3rem, 6vw, 5.25rem);
+  --tp-stack-gap-md: clamp(2.25rem, 4.5vw, 3.75rem);
+  --tp-page-pad-b: clamp(3.5rem, 8vw, 5rem);
 }
 
 *,
@@ -402,17 +406,17 @@ html.fp-enabled #fullpage.tp-main {
 .section-stream__inner {
   max-width: 960px;
   margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 4vw, 1.5rem) 3rem;
+  padding: clamp(2.5rem, 6vw, 4.25rem) clamp(1rem, 4vw, 1.5rem) clamp(2.75rem, 7vw, 4.75rem);
 }
 
 .tp-block {
-  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--tp-stack-gap);
 }
 
 .tp-block--alt {
   margin-left: -1rem;
   margin-right: -1rem;
-  padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 4vw, 1.5rem);
+  padding: clamp(2.35rem, 5vw, 3.5rem) clamp(1rem, 4vw, 1.5rem);
   background: var(--tp-surface-2);
   border-radius: 16px;
 }
@@ -426,7 +430,7 @@ html.fp-enabled #fullpage.tp-main {
 }
 
 .tp-block__lede {
-  margin: 0 0 1.5rem;
+  margin: 0 0 clamp(1.75rem, 3vw, 2.25rem);
   color: var(--tp-muted);
   line-height: 1.65;
   max-width: 52ch;
@@ -434,7 +438,7 @@ html.fp-enabled #fullpage.tp-main {
 
 .tp-cards {
   display: grid;
-  gap: 1rem;
+  gap: clamp(1.1rem, 2vw, 1.35rem);
 }
 
 @media (min-width: 640px) {
@@ -496,7 +500,7 @@ html.fp-enabled #fullpage.tp-main {
 .tp-combo-row {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: clamp(0.85rem, 1.5vw, 1.1rem);
 }
 
 @media (min-width: 720px) {
@@ -578,7 +582,7 @@ html.fp-enabled #fullpage.tp-main {
 .tp-footer {
   background: #070b12;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 2.5rem 0 2rem;
+  padding: clamp(2.75rem, 5vw, 3.5rem) 0 clamp(2.25rem, 4vw, 2.75rem);
 }
 
 .tp-footer__inner {
@@ -589,8 +593,8 @@ html.fp-enabled #fullpage.tp-main {
 
 .tp-footer__cols {
   display: grid;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: clamp(2.25rem, 4vw, 2.75rem);
+  margin-bottom: clamp(2.25rem, 4vw, 2.75rem);
 }
 
 @media (min-width: 640px) {
@@ -628,7 +632,7 @@ html.fp-enabled #fullpage.tp-main {
 
 .tp-footer__legal {
   margin: 0;
-  padding-top: 1.5rem;
+  padding-top: clamp(1.75rem, 3vw, 2.25rem);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.4);
@@ -664,7 +668,7 @@ body.nav-open {
 .sub-main {
   max-width: 42rem;
   margin: 0 auto;
-  padding: calc(var(--header-h) + 2rem) clamp(1rem, 4vw, 1.5rem) 3rem;
+  padding: calc(var(--header-h) + 2.5rem) clamp(1rem, 4vw, 1.5rem) var(--tp-page-pad-b);
 }
 
 .sub-main h1 {
@@ -685,7 +689,7 @@ body.nav-open {
 }
 
 .sub-main h2 {
-  margin: 2rem 0 0.75rem;
+  margin: clamp(2.25rem, 4vw, 3rem) 0 0.9rem;
   font-size: 1.125rem;
   font-weight: 700;
   color: #fff;
@@ -699,7 +703,7 @@ body.nav-open {
 }
 
 .sub-main ul {
-  margin: 0 0 1rem;
+  margin: 0 0 1.25rem;
   padding-left: 1.25rem;
 }
 
@@ -717,7 +721,7 @@ body.nav-open {
 }
 
 .news-page-head {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(2.5rem, 4vw, 3.25rem);
 }
 
 .sub-main--news .news-page-head__lede {
@@ -728,14 +732,14 @@ body.nav-open {
 }
 
 .news-featured {
-  margin-bottom: 3rem;
+  margin-bottom: var(--tp-stack-gap-md);
 }
 
 .news-featured__head {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(1.35rem, 2.5vw, 1.75rem);
 }
 
 .news-featured__star {
@@ -755,7 +759,7 @@ body.nav-open {
 .news-featured__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: clamp(1.35rem, 2.2vw, 1.65rem);
 }
 
 @media (max-width: 900px) {
@@ -894,12 +898,12 @@ body.nav-open {
 }
 
 .news-aside {
-  padding-top: 2rem;
+  padding-top: clamp(2.25rem, 4vw, 3rem);
   border-top: 1px solid var(--tp-line);
 }
 
 .sub-main--news h2.news-aside__h {
-  margin: 1.75rem 0 0.65rem;
+  margin: clamp(2rem, 3.5vw, 2.5rem) 0 0.65rem;
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
@@ -931,7 +935,7 @@ body.nav-open {
 .subpage-body--products .sub-main--products {
   max-width: min(72rem, 100%);
   margin: 0 auto;
-  padding: calc(var(--header-h) + 2.25rem) clamp(1.25rem, 4vw, 2rem) 3rem;
+  padding: calc(var(--header-h) + 2.5rem) clamp(1.25rem, 4vw, 2rem) var(--tp-page-pad-b);
 }
 
 .products-awards__strip {
@@ -939,8 +943,8 @@ body.nav-open {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 0.75rem 1.5rem;
-  margin: 0 0 2.5rem;
-  padding-bottom: 1.75rem;
+  margin: 0 0 clamp(2.75rem, 4vw, 3.5rem);
+  padding-bottom: clamp(1.85rem, 3vw, 2.25rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.625rem;
@@ -1107,13 +1111,13 @@ body.nav-open {
 
 /* Products: 티어 카드 + CTA + 무한 마퀴 슬라이더 */
 .products-showcase {
-  margin-top: 3rem;
-  padding-top: 3rem;
+  margin-top: var(--tp-stack-gap-md);
+  padding-top: clamp(2.75rem, 5vw, 3.75rem);
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .sub-main--products h2.products-showcase__heading {
-  margin: 0 0 1.75rem;
+  margin: 0 0 clamp(1.85rem, 3vw, 2.25rem);
   font-family: Inter, system-ui, sans-serif;
   font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   font-weight: 700;
@@ -1227,7 +1231,7 @@ body.nav-open {
 .products-showcase__cta-wrap {
   display: flex;
   justify-content: center;
-  margin: clamp(1.75rem, 4vw, 2.5rem) 0 0;
+  margin: clamp(2rem, 4.5vw, 3rem) 0 0;
 }
 
 .products-showcase__cta {
@@ -1258,7 +1262,7 @@ body.nav-open {
 }
 
 .products-slider-block {
-  margin-top: clamp(2.25rem, 5vw, 3.25rem);
+  margin-top: var(--tp-stack-gap);
 }
 
 .products-slider__strip {
@@ -1453,13 +1457,13 @@ body.nav-open {
 .subpage-body--about .sub-main--about {
   max-width: min(72rem, 100%);
   margin: 0 auto;
-  padding: 3rem clamp(1.25rem, 4vw, 2rem) 4rem;
+  padding: clamp(3rem, 5vw, 3.75rem) clamp(1.25rem, 4vw, 2rem) clamp(4.5rem, 9vw, 6rem);
   background: transparent;
 }
 
 .about-editorial {
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
+  margin-bottom: clamp(3rem, 5vw, 3.75rem);
+  padding-bottom: clamp(2.25rem, 4vw, 3rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1500,10 +1504,10 @@ body.nav-open {
 .about-philosophy {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  gap: clamp(2rem, 5vw, 3.5rem);
+  gap: clamp(2.25rem, 5vw, 4rem);
   align-items: start;
-  margin-top: 2.75rem;
-  padding-top: 2.75rem;
+  margin-top: clamp(3rem, 5vw, 4rem);
+  padding-top: clamp(3rem, 5vw, 4rem);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1555,8 +1559,8 @@ body.nav-open {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 0.75rem 1.5rem;
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
+  margin-top: clamp(2.75rem, 4vw, 3.5rem);
+  padding-top: clamp(1.75rem, 3vw, 2.25rem);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.625rem;
@@ -1678,7 +1682,7 @@ body.nav-open {
 }
 
 .sub-main--about h2.about-prose__h {
-  margin: 2.25rem 0 0.65rem;
+  margin: clamp(2.75rem, 4.5vw, 3.5rem) 0 0.75rem;
   font-family: Inter, "Noto Sans KR", sans-serif;
   font-size: 0.8125rem;
   font-weight: 700;
@@ -1719,8 +1723,8 @@ body.nav-open {
 
 /* 카드 뉴스 (WORKS 그리드) */
 .about-card-news {
-  margin-top: 3.5rem;
-  padding-top: 2.5rem;
+  margin-top: clamp(3.75rem, 6vw, 5rem);
+  padding-top: clamp(2.75rem, 4.5vw, 3.5rem);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1730,10 +1734,57 @@ body.nav-open {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1rem 2rem;
-  margin-bottom: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
 }
 
-.sub-main--about p.about-card-news__eyebrow {
+.about-card-news__head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.about-card-news--stream .about-card-news__kicker {
+  margin: 0;
+  max-width: 28rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--tp-muted);
+}
+
+@media (max-width: 640px) {
+  .about-card-news--stream .about-card-news__head {
+    align-items: flex-start;
+  }
+}
+
+.about-card-news__intro {
+  margin: 0 0 clamp(1.85rem, 4vw, 2.5rem);
+  max-width: 52ch;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--tp-muted);
+}
+
+.about-card-news__foot {
+  margin: clamp(2rem, 4.5vw, 2.75rem) 0 0;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--tp-muted);
+}
+
+.section-stream .about-card-news__foot a {
+  color: #9ecbff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(158, 203, 255, 0.35);
+}
+
+.section-stream .about-card-news__foot a:hover {
+  color: #cfe6ff;
+  border-bottom-color: rgba(207, 230, 255, 0.55);
+}
+
+.sub-main--about p.about-card-news__eyebrow,
+.section-stream p.about-card-news__eyebrow {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.6875rem;
@@ -1743,7 +1794,8 @@ body.nav-open {
   color: rgba(255, 255, 255, 0.45);
 }
 
-.sub-main--about h2.about-card-news__title {
+.sub-main--about h2.about-card-news__title,
+.section-stream h2.about-card-news__title {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   font-size: clamp(2.75rem, 8vw, 4.5rem);
@@ -1756,7 +1808,7 @@ body.nav-open {
 .about-card-news__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: clamp(1.35rem, 2.5vw, 1.75rem);
 }
 
 @media (max-width: 720px) {
@@ -1816,7 +1868,8 @@ body.nav-open {
   color: #0a0a0a;
 }
 
-.sub-main--about .about-card--split .about-card__meta {
+.sub-main--about .about-card--split .about-card__meta,
+.section-stream .about-card--split .about-card__meta {
   margin: 0.65rem 0 0;
   font-size: 0.6875rem;
   font-weight: 500;
@@ -1867,7 +1920,8 @@ body.nav-open {
   vertical-align: super;
 }
 
-.sub-main--about .about-card--cover .about-card__cover-sub {
+.sub-main--about .about-card--cover .about-card__cover-sub,
+.section-stream .about-card--cover .about-card__cover-sub {
   margin: 0.5rem 0 0;
   font-size: 0.75rem;
   font-weight: 500;
@@ -1892,7 +1946,8 @@ body.nav-open {
   opacity: 0.9;
 }
 
-.sub-main--about .about-card--paper .about-card__paper-lede {
+.sub-main--about .about-card--paper .about-card__paper-lede,
+.section-stream .about-card--paper .about-card__paper-lede {
   margin: 0.5rem 0 1rem;
   max-width: 22rem;
   font-size: 0.875rem;
@@ -1938,7 +1993,7 @@ body.nav-open {
 
 .sub-back--about,
 .sub-back--products {
-  margin-top: 3rem;
+  margin-top: clamp(3.25rem, 5vw, 4.25rem);
   padding: 0.65rem 1.1rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
@@ -1962,7 +2017,7 @@ body.nav-open {
 
 /* 문의사항: 레이더 차트 + 1:1 Q&A */
 .ri-radar {
-  margin: 2rem 0;
+  margin: clamp(2.25rem, 4vw, 3rem) 0;
   padding: 1.25rem 1.25rem 1.5rem;
   background: var(--tp-surface);
   border: 1px solid var(--tp-line);
@@ -2001,11 +2056,11 @@ body.nav-open {
 }
 
 .ri-qa {
-  margin: 2.5rem 0 2rem;
+  margin: clamp(2.75rem, 4.5vw, 3.5rem) 0 clamp(2.25rem, 4vw, 3rem);
 }
 
 .ri-qa__intro {
-  margin: 0 0 1.25rem;
+  margin: 0 0 clamp(1.35rem, 2.5vw, 1.65rem);
   color: var(--tp-muted);
   line-height: 1.65;
   font-size: 0.9375rem;
@@ -2014,7 +2069,7 @@ body.nav-open {
 .ri-qa__grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(1.1rem, 2vw, 1.35rem);
 }
 
 .ri-qa-card {
@@ -2086,7 +2141,7 @@ body.nav-open {
 
 /* 커뮤니티 게시판 (정적 데모) */
 .community-board {
-  margin: 2rem 0 0;
+  margin: clamp(2.5rem, 4vw, 3.25rem) 0 0;
   padding: 1.25rem 1.25rem 1.5rem;
   background: var(--tp-surface);
   border: 1px solid var(--tp-line);
@@ -2280,7 +2335,7 @@ body.nav-open {
 
 .sub-back {
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: clamp(2.5rem, 4vw, 3.25rem);
   padding: 0.65rem 1.1rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.22);
